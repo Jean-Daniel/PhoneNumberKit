@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		11C2EF391D62BC3200052D44 /* NSRegularExpression+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C2EF381D62BC3200052D44 /* NSRegularExpression+Swift.swift */; };
 		1B0651171E2AD698006AE849 /* PhoneNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0651161E2AD698006AE849 /* PhoneNumberFormatter.swift */; };
+		1BDDBAD32303598A006AE849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDBAD22303598A006AE849 /* AppDelegate.swift */; };
+		1BDDBAD52303598B006AE849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDBAD42303598B006AE849 /* Assets.xcassets */; };
+		1BDDBAD82303598B006AE849 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDBAD62303598B006AE849 /* MainMenu.xib */; };
+		1BDDBAE42303598B006AE849 /* PhoneNumberLiveFormatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDBAE32303598B006AE849 /* PhoneNumberLiveFormatUITests.swift */; };
+		1BDDBAED23035A33006AE849 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342418641BB6E5A000EE70E7 /* PhoneNumberKit.framework */; };
+		1BDDBAEF23035A4F006AE849 /* PhoneNumberKit.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 342418641BB6E5A000EE70E7 /* PhoneNumberKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3417BD6B2210AC4900477EE7 /* MetadataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3417BD6A2210AC4900477EE7 /* MetadataParsing.swift */; };
 		3420CF5E1BE8959F00FAE34F /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CF5D1BE8959F00FAE34F /* Formatter.swift */; };
 		3422D9BA1BE6A2D500867D02 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3422D9B91BE6A2D500867D02 /* ParseManager.swift */; };
@@ -33,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1BDDBAE02303598B006AE849 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3424185B1BB6E5A000EE70E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BDDBACF2303598A006AE849;
+			remoteInfo = PhoneNumberLiveFormat;
+		};
 		342418701BB6E5A000EE70E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3424185B1BB6E5A000EE70E7 /* Project object */;
@@ -42,9 +55,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1BDDBAEE23035A3E006AE849 /* Copy Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1BDDBAEF23035A4F006AE849 /* PhoneNumberKit.framework in Copy Framework */,
+			);
+			name = "Copy Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		11C2EF381D62BC3200052D44 /* NSRegularExpression+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Swift.swift"; sourceTree = "<group>"; };
 		1B0651161E2AD698006AE849 /* PhoneNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatter.swift; sourceTree = "<group>"; };
+		1BDDBAD02303598A006AE849 /* PhoneNumberLiveFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneNumberLiveFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BDDBAD22303598A006AE849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1BDDBAD42303598B006AE849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BDDBAD72303598B006AE849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1BDDBAD92303598B006AE849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDDBADA2303598B006AE849 /* PhoneNumberLiveFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhoneNumberLiveFormat.entitlements; sourceTree = "<group>"; };
+		1BDDBADF2303598B006AE849 /* PhoneNumberLiveFormatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneNumberLiveFormatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BDDBAE32303598B006AE849 /* PhoneNumberLiveFormatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberLiveFormatUITests.swift; sourceTree = "<group>"; };
+		1BDDBAE52303598B006AE849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3417BD6A2210AC4900477EE7 /* MetadataParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataParsing.swift; sourceTree = "<group>"; };
 		3420CF5D1BE8959F00FAE34F /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		3422D9B91BE6A2D500867D02 /* ParseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
@@ -71,6 +107,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1BDDBACD2303598A006AE849 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDBAED23035A33006AE849 /* PhoneNumberKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDBADC2303598B006AE849 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		342418601BB6E5A000EE70E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +142,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BDDBAD12303598A006AE849 /* PhoneNumberLiveFormat */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDBAD22303598A006AE849 /* AppDelegate.swift */,
+				1BDDBAD42303598B006AE849 /* Assets.xcassets */,
+				1BDDBAD62303598B006AE849 /* MainMenu.xib */,
+				1BDDBAD92303598B006AE849 /* Info.plist */,
+				1BDDBADA2303598B006AE849 /* PhoneNumberLiveFormat.entitlements */,
+			);
+			path = PhoneNumberLiveFormat;
+			sourceTree = "<group>";
+		};
+		1BDDBAE22303598B006AE849 /* PhoneNumberLiveFormatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDBAE32303598B006AE849 /* PhoneNumberLiveFormatUITests.swift */,
+				1BDDBAE52303598B006AE849 /* Info.plist */,
+			);
+			path = PhoneNumberLiveFormatUITests;
+			sourceTree = "<group>";
+		};
+		1BDDBAEC23035A33006AE849 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		340757841DA03A1700D493A0 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +194,10 @@
 			children = (
 				342418661BB6E5A000EE70E7 /* PhoneNumberKit */,
 				342418721BB6E5A000EE70E7 /* PhoneNumberKitTests */,
+				1BDDBAD12303598A006AE849 /* PhoneNumberLiveFormat */,
+				1BDDBAE22303598B006AE849 /* PhoneNumberLiveFormatUITests */,
 				342418651BB6E5A000EE70E7 /* Products */,
+				1BDDBAEC23035A33006AE849 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +206,8 @@
 			children = (
 				342418641BB6E5A000EE70E7 /* PhoneNumberKit.framework */,
 				3424186E1BB6E5A000EE70E7 /* PhoneNumberKitTests.xctest */,
+				1BDDBAD02303598A006AE849 /* PhoneNumberLiveFormat.app */,
+				1BDDBADF2303598B006AE849 /* PhoneNumberLiveFormatUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +268,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1BDDBACF2303598A006AE849 /* PhoneNumberLiveFormat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BDDBAE62303598B006AE849 /* Build configuration list for PBXNativeTarget "PhoneNumberLiveFormat" */;
+			buildPhases = (
+				1BDDBACC2303598A006AE849 /* Sources */,
+				1BDDBACD2303598A006AE849 /* Frameworks */,
+				1BDDBACE2303598A006AE849 /* Resources */,
+				1BDDBAEE23035A3E006AE849 /* Copy Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhoneNumberLiveFormat;
+			productName = PhoneNumberLiveFormat;
+			productReference = 1BDDBAD02303598A006AE849 /* PhoneNumberLiveFormat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BDDBADE2303598B006AE849 /* PhoneNumberLiveFormatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BDDBAE92303598B006AE849 /* Build configuration list for PBXNativeTarget "PhoneNumberLiveFormatUITests" */;
+			buildPhases = (
+				1BDDBADB2303598B006AE849 /* Sources */,
+				1BDDBADC2303598B006AE849 /* Frameworks */,
+				1BDDBADD2303598B006AE849 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BDDBAE12303598B006AE849 /* PBXTargetDependency */,
+			);
+			name = PhoneNumberLiveFormatUITests;
+			productName = PhoneNumberLiveFormatUITests;
+			productReference = 1BDDBADF2303598B006AE849 /* PhoneNumberLiveFormatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		342418631BB6E5A000EE70E7 /* PhoneNumberKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 342418781BB6E5A000EE70E7 /* Build configuration list for PBXNativeTarget "PhoneNumberKit" */;
@@ -226,10 +346,19 @@
 		3424185B1BB6E5A000EE70E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Roy Marmelstein";
 				TargetAttributes = {
+					1BDDBACF2303598A006AE849 = {
+						CreatedOnToolsVersion = 10.3;
+						ProvisioningStyle = Automatic;
+					};
+					1BDDBADE2303598B006AE849 = {
+						CreatedOnToolsVersion = 10.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1BDDBACF2303598A006AE849;
+					};
 					342418631BB6E5A000EE70E7 = {
 						CreatedOnToolsVersion = 7.0;
 						LastSwiftMigration = 1020;
@@ -246,6 +375,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 3424185A1BB6E5A000EE70E7;
 			productRefGroup = 342418651BB6E5A000EE70E7 /* Products */;
@@ -254,11 +384,29 @@
 			targets = (
 				342418631BB6E5A000EE70E7 /* PhoneNumberKit */,
 				3424186D1BB6E5A000EE70E7 /* PhoneNumberKitTests */,
+				1BDDBACF2303598A006AE849 /* PhoneNumberLiveFormat */,
+				1BDDBADE2303598B006AE849 /* PhoneNumberLiveFormatUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1BDDBACE2303598A006AE849 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDBAD52303598B006AE849 /* Assets.xcassets in Resources */,
+				1BDDBAD82303598B006AE849 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDBADD2303598B006AE849 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		342418621BB6E5A000EE70E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +426,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1BDDBACC2303598A006AE849 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDBAD32303598A006AE849 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDBADB2303598B006AE849 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDBAE42303598B006AE849 /* PhoneNumberLiveFormatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3424185F1BB6E5A000EE70E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +476,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1BDDBAE12303598B006AE849 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BDDBACF2303598A006AE849 /* PhoneNumberLiveFormat */;
+			targetProxy = 1BDDBAE02303598B006AE849 /* PBXContainerItemProxy */;
+		};
 		342418711BB6E5A000EE70E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 342418631BB6E5A000EE70E7 /* PhoneNumberKit */;
@@ -319,7 +488,126 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		1BDDBAD62303598B006AE849 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BDDBAD72303598B006AE849 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		1BDDBAE72303598B006AE849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = PhoneNumberLiveFormat/PhoneNumberLiveFormat.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PhoneNumberLiveFormat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenonium.PhoneNumberLiveFormat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1BDDBAE82303598B006AE849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = PhoneNumberLiveFormat/PhoneNumberLiveFormat.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PhoneNumberLiveFormat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenonium.PhoneNumberLiveFormat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1BDDBAEA2303598B006AE849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PhoneNumberLiveFormatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenonium.PhoneNumberLiveFormatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = PhoneNumberLiveFormat;
+			};
+			name = Debug;
+		};
+		1BDDBAEB2303598B006AE849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PhoneNumberLiveFormatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenonium.PhoneNumberLiveFormatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = PhoneNumberLiveFormat;
+			};
+			name = Release;
+		};
 		342418761BB6E5A000EE70E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -508,6 +796,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1BDDBAE62303598B006AE849 /* Build configuration list for PBXNativeTarget "PhoneNumberLiveFormat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDDBAE72303598B006AE849 /* Debug */,
+				1BDDBAE82303598B006AE849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BDDBAE92303598B006AE849 /* Build configuration list for PBXNativeTarget "PhoneNumberLiveFormatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDDBAEA2303598B006AE849 /* Debug */,
+				1BDDBAEB2303598B006AE849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3424185E1BB6E5A000EE70E7 /* Build configuration list for PBXProject "PhoneNumberKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
