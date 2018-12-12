@@ -106,32 +106,21 @@ final class ParseManager {
     - parameter ignoreType:   Avoids number type checking for faster performance.
     - Returns: An array of valid PhoneNumber objects.
     */
-    func parseMultiple(_ numberStrings: [String], withRegion region: String, ignoreType: Bool, shouldReturnFailedEmptyNumbers: Bool = false, testCallback: (()->Void)? = nil) -> [PhoneNumber] {
-        var multiParseArray = [PhoneNumber]()
-        let group = DispatchGroup()
-        let queue = DispatchQueue(label: "com.phonenumberkit.multipleparse", qos: .default)
-        for (index, numberString) in numberStrings.enumerated() {
-            group.enter()
-            queue.async(group: group, execute: {
-                [weak self] in
-                do {
-                    if let phoneNumebr = try self?.parse(numberString, withRegion: region, ignoreType: ignoreType) {
-                        multiParseArray.append(phoneNumebr)
-                    } else if shouldReturnFailedEmptyNumbers {
-                        multiParseArray.append(PhoneNumber.notPhoneNumber())
-                    }
-                } catch {
-                    if shouldReturnFailedEmptyNumbers {
-                        multiParseArray.append(PhoneNumber.notPhoneNumber())
-                    }
-                }
-                group.leave()
-            })
-            if index == numberStrings.count/2 {
-                testCallback?()
-            }
+    func parseMultiple(_ numberStrings: [String], withRegion region: String, ignoreType: Bool, shouldReturnFailedEmptyNumbers: Bool = false) -> [PhoneNumber] {
+        var hasError = false
+        var multiParseArray = [PhoneNumber](repeating: PhoneNumber.notPhoneNumber(), count: numberStrings.count)
+        DispatchQueue.concurrentPerform(iterations: numberStrings.count) { [unowned self] in
+          let numberString = numberStrings[$0]
+          do {
+            let phoneNumber = try self.parse(numberString, withRegion: region, ignoreType: ignoreType)
+            multiParseArray[$0] = phoneNumber
+          } catch {
+            hasError = true
+          }
         }
-        group.wait()
+        if hasError && !shouldReturnFailedEmptyNumbers {
+          multiParseArray = multiParseArray.filter { $0.type != .notParsed }
+        }
         return multiParseArray
     }
 

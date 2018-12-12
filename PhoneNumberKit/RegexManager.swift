@@ -7,14 +7,37 @@
 //
 
 import Foundation
+import os
+
+private extension pthread_rwlock_t {
+
+  mutating func read<T>(_ block: () throws -> T) rethrows -> T {
+    pthread_rwlock_rdlock(&self)
+    defer { pthread_rwlock_unlock(&self) }
+    return try block()
+  }
+
+  mutating func write(_ block: () throws -> Void) rethrows {
+    pthread_rwlock_wrlock(&self)
+    defer { pthread_rwlock_unlock(&self) }
+    try block()
+  }
+}
 
 final class RegexManager {
 
     // MARK: Regular expression pool
+    private var _lock = pthread_rwlock_t()
+
+    init() {
+      pthread_rwlock_init(&_lock, nil)
+    }
+
+    deinit {
+      pthread_rwlock_destroy(&_lock)
+    }
 
     var regularExpresionPool = [String: NSRegularExpression]()
-
-    private let regularExpressionPoolQueue = DispatchQueue(label: "com.phonenumberkit.regexpool", attributes: .concurrent)
 
     var spaceCharacterSet: CharacterSet = {
         let characterSet = NSMutableCharacterSet(charactersIn: "\u{00a0}")
@@ -27,8 +50,8 @@ final class RegexManager {
     func regexWithPattern(_ pattern: String) throws -> NSRegularExpression {
         var cached: NSRegularExpression?
 
-        regularExpressionPoolQueue.sync {
-            cached = self.regularExpresionPool[pattern]
+        cached = _lock.read {
+          self.regularExpresionPool[pattern]
         }
 
         if let cached = cached {
@@ -37,11 +60,7 @@ final class RegexManager {
 
         do {
             let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
-
-            regularExpressionPoolQueue.async(flags: .barrier) {
-                self.regularExpresionPool[pattern] = regex
-            }
-
+            _lock.write { self.regularExpresionPool[pattern] = regex }
             return regex
         } catch {
             throw PhoneNumberError.generalError

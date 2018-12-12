@@ -10,7 +10,7 @@ import Foundation
 
 final class MetadataManager {
 
-    var territories = [MetadataTerritory]()
+    let territories: [MetadataTerritory]
     var territoriesByCode = [UInt64: [MetadataTerritory]]()
     var mainTerritoryByCode = [UInt64: MetadataTerritory]()
     var territoriesByCountry = [String: MetadataTerritory]()
@@ -21,7 +21,7 @@ final class MetadataManager {
     ///
     /// - Parameter metadataCallback: a closure that returns metadata as JSON Data.
     public init (metadataCallback: MetadataCallback) {
-        territories = populateTerritories(metadataCallback: metadataCallback)
+        territories = MetadataManager.populateTerritories(metadataCallback: metadataCallback)
         for item in territories {
             var currentTerritories: [MetadataTerritory] = territoriesByCode[item.countryCode] ?? [MetadataTerritory]()
             currentTerritories.append(item)
@@ -33,17 +33,11 @@ final class MetadataManager {
         }
     }
 
-    deinit {
-        territories.removeAll()
-        territoriesByCode.removeAll()
-        territoriesByCountry.removeAll()
-    }
-
     /// Populates the metadata from a metadataCallback.
     ///
     /// - Parameter metadataCallback: a closure that returns metadata as JSON Data.
     /// - Returns: array of MetadataTerritory objects
-    fileprivate func populateTerritories(metadataCallback: MetadataCallback) -> [MetadataTerritory] {
+    private class func populateTerritories(metadataCallback: MetadataCallback) -> [MetadataTerritory] {
         var territoryArray = [MetadataTerritory]()
         do {
             let jsonData: Data?  = try metadataCallback()
