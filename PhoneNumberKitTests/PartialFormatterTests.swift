@@ -9,8 +9,6 @@
 import XCTest
 @testable import PhoneNumberKit
 
-import PhoneNumberKit
-
 /// Testing partial formatter. Goal is to replicate formatting behaviour of Apple's dialer.
 class PartialFormatterTests: XCTestCase {
     
