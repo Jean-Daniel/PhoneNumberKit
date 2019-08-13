@@ -222,7 +222,7 @@ public final class PartialFormatter {
         }
         let index = rawNumber.index(rawNumber.startIndex, offsetBy: startOfNationalNumber)
         processedNumber = String(rawNumber[index...])
-        prefixBeforeNationalNumber.append(String(rawNumber[..<index]))
+        prefixBeforeNationalNumber.append(contentsOf: rawNumber[..<index])
         return processedNumber
     }
 
@@ -367,8 +367,8 @@ public final class PartialFormatter {
         }
         if rebuiltIndex < rawNumber.count {
             let nationalCharacterIndex = rawNumber.index(rawNumber.startIndex, offsetBy: rebuiltIndex)
-            let remainingNationalNumber: String = String(rawNumber[nationalCharacterIndex...])
-            rebuiltString.append(remainingNationalNumber)
+            let remainingNationalNumber = rawNumber[nationalCharacterIndex...]
+            rebuiltString.append(contentsOf: remainingNationalNumber)
         }
         rebuiltString = rebuiltString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
 
