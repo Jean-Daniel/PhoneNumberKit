@@ -156,7 +156,13 @@ public final class PhoneNumberKit: NSObject {
     public class func defaultRegionCode() -> String {
 #if os(iOS)
         let networkInfo = CTTelephonyNetworkInfo()
-        let carrier = networkInfo.subscriberCellularProvider
+
+        let carrier: CTCarrier?
+        if #available(iOS 12.0, *) {
+          carrier = networkInfo.serviceSubscriberCellularProviders?.first?.value
+        } else {
+          carrier = networkInfo.subscriberCellularProvider
+        }
         if let isoCountryCode = carrier?.isoCountryCode {
             return isoCountryCode.uppercased()
         }
